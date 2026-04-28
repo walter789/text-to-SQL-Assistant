@@ -1,6 +1,6 @@
 # Text-to-SQL Analytics Assistant
 
-A production-grade AI system that converts natural language questions into SQL queries, executes them against a relational database, and returns structured insights — all through a clean REST API and interactive UI.
+A production-grade AI system that converts natural language questions into SQL queries, executes them against a relational database, and returns structured insights. All through a clean REST API and interactive UI.
 
 ---
 
