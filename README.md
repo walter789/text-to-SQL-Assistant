@@ -175,7 +175,7 @@ cd text-to-sql-assistant
 pip install -r requirements.txt
 
 # 3. Set up environment
-cp .env.example .env
+ .env
 # Edit .env and add your Groq API key:
 # GROQ_API_KEY=gsk_...
 
