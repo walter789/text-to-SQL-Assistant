@@ -44,7 +44,7 @@ User Question
 │         │  blocks DELETE/DROP/INSERT etc.   │
 │         │                                   │
 │  5. SQL Executor (SQLAlchemy)               │
-│         │  ── on error ──► Self-Correction  │
+│         │  on error ──► Self-Correction  │
 │         │                  (max 2 retries)  │
 │  6. Result Explainer (Groq LLM)             │
 │         │  → AnalyticsResponse (Pydantic)   │
@@ -63,7 +63,7 @@ User Question
 Instead of parsing raw LLM text, every LLM call returns a validated Pydantic V2 object. SQL generation returns a `SQLGenerationResult`, explanation returns an `AnalyticsResponse`. Zero string parsing, full type safety.
 
 ### SQL Safety Guardrail
-A deterministic regex validator runs **before** any SQL touches the database. It blocks `DELETE`, `DROP`, `INSERT`, `UPDATE`, `TRUNCATE`, `ALTER`, `CREATE`, `GRANT`, and stacked queries (`;` injection). If triggered, the request is rejected immediately — the LLM never gets a second chance to cause damage.
+A deterministic regex validator runs **before** any SQL touches the database. It blocks `DELETE`, `DROP`, `INSERT`, `UPDATE`, `TRUNCATE`, `ALTER`, `CREATE`, `GRANT`, and stacked queries (`;` injection). If triggered, the request is rejected immediately the LLM never gets a second chance to cause damage.
 
 ### Schema-Aware Prompting
 The LLM receives the full database schema (table names, column types, foreign keys) plus 3 sample rows per table and 2 few-shot examples before generating SQL. This grounds the model in the actual structure rather than guessing column names.
